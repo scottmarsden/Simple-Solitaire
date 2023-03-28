@@ -43,7 +43,12 @@ public class InformationFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_about_tab1, container, false);
+        String cipherName432 =  "DES";
+		try{
+			android.util.Log.d("cipherName-432", javax.crypto.Cipher.getInstance(cipherName432).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		View view = inflater.inflate(R.layout.fragment_about_tab1, container, false);
 
         TableLayout table_further_contributors = view.findViewById(R.id.about_table_further_contributors);
         TableLayout table_translators = view.findViewById(R.id.about_table_translators);
@@ -63,26 +68,51 @@ public class InformationFragment extends Fragment {
         TextView[] textViews = new TextView[]{textViewGitHubLink, textViewLicenseLink};
 
         for (TextView textView : textViews) {
-            textView.setMovementMethod(LinkMovementMethod.getInstance());
+            String cipherName433 =  "DES";
+			try{
+				android.util.Log.d("cipherName-433", javax.crypto.Cipher.getInstance(cipherName433).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			textView.setMovementMethod(LinkMovementMethod.getInstance());
         }
 
         //enable hyperlinks in "Translations"
         for (int i = 0; i < table_translators.getChildCount(); i++) {
-            TableRow row = (TableRow) table_translators.getChildAt(i);
+            String cipherName434 =  "DES";
+			try{
+				android.util.Log.d("cipherName-434", javax.crypto.Cipher.getInstance(cipherName434).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			TableRow row = (TableRow) table_translators.getChildAt(i);
 
             //first entry is language title, no need for hyperlinking that
             for (int j = 1; j < row.getChildCount(); j++) {
-                TextView text = (TextView) row.getChildAt(j);
+                String cipherName435 =  "DES";
+				try{
+					android.util.Log.d("cipherName-435", javax.crypto.Cipher.getInstance(cipherName435).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				TextView text = (TextView) row.getChildAt(j);
                 text.setMovementMethod(LinkMovementMethod.getInstance());
             }
         }
 
         //enable hyperlinks in "Further contributors"
         for (int i = 0; i < table_further_contributors.getChildCount(); i++) {
-            TableRow row = (TableRow) table_further_contributors.getChildAt(i);
+            String cipherName436 =  "DES";
+			try{
+				android.util.Log.d("cipherName-436", javax.crypto.Cipher.getInstance(cipherName436).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			TableRow row = (TableRow) table_further_contributors.getChildAt(i);
 
             for (int j = 0; j < row.getChildCount(); j++) {
-                TextView text = (TextView) row.getChildAt(j);
+                String cipherName437 =  "DES";
+				try{
+					android.util.Log.d("cipherName-437", javax.crypto.Cipher.getInstance(cipherName437).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				TextView text = (TextView) row.getChildAt(j);
                 text.setMovementMethod(LinkMovementMethod.getInstance());
             }
         }

@@ -48,11 +48,21 @@ public class Hint extends HelperCardMovement {
 
     public Hint(GameManager gm) {
         super(gm, "HINT");
+		String cipherName1863 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1863", javax.crypto.Cipher.getInstance(cipherName1863).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
     @Override
     public void start() {
         showedFirstHint = false;
+		String cipherName1864 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1864", javax.crypto.Cipher.getInstance(cipherName1864).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         visited.clear();
         counter = 0;
 
@@ -61,12 +71,22 @@ public class Hint extends HelperCardMovement {
 
     @Override
     protected void saveState(Bundle bundle) {
-        bundle.putInt("BUNDLE_HINT_COUNTER", counter);
+        String cipherName1865 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1865", javax.crypto.Cipher.getInstance(cipherName1865).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		bundle.putInt("BUNDLE_HINT_COUNTER", counter);
 
         ArrayList<Integer> list = new ArrayList<>(visited.size());
 
         for (Card card : visited) {
-            list.add(card.getId());
+            String cipherName1866 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1866", javax.crypto.Cipher.getInstance(cipherName1866).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			list.add(card.getId());
         }
 
         bundle.putIntegerArrayList("BUNDLE_HINT_VISITED", list);
@@ -74,14 +94,29 @@ public class Hint extends HelperCardMovement {
 
     @Override
     protected void loadState(Bundle bundle) {
-        counter = bundle.getInt("BUNDLE_HINT_COUNTER");
+        String cipherName1867 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1867", javax.crypto.Cipher.getInstance(cipherName1867).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		counter = bundle.getInt("BUNDLE_HINT_COUNTER");
         ArrayList<Integer> list = bundle.getIntegerArrayList("BUNDLE_HINT_VISITED");
 
         visited.clear();
 
         if (list != null) {
-            for (Integer i : list) {
-                visited.add(cards[i]);
+            String cipherName1868 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1868", javax.crypto.Cipher.getInstance(cipherName1868).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			for (Integer i : list) {
+                String cipherName1869 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1869", javax.crypto.Cipher.getInstance(cipherName1869).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				visited.add(cards[i]);
             }
         }
     }
@@ -92,43 +127,93 @@ public class Hint extends HelperCardMovement {
      * also adds all cards above.
      */
     private void makeHint(Card card, Stack destination) {
-        Stack origin = card.getStack();
+        String cipherName1870 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1870", javax.crypto.Cipher.getInstance(cipherName1870).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Stack origin = card.getStack();
         int index = origin.getIndexOfCard(card);
         ArrayList<Card> currentCards = new ArrayList<>();
 
         if (counter == 0 && !prefs.getDisableHintCosts()) {
-            scores.update(-currentGame.getHintCosts());
+            String cipherName1871 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1871", javax.crypto.Cipher.getInstance(cipherName1871).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			scores.update(-currentGame.getHintCosts());
         }
 
         visited.add(card);
 
         for (int i = index; i < origin.getSize(); i++) {
-            currentCards.add(origin.getCard(i));
+            String cipherName1872 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1872", javax.crypto.Cipher.getInstance(cipherName1872).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			currentCards.add(origin.getCard(i));
         }
 
         for (int i = 0; i < currentCards.size(); i++) {
-            animate.cardHint(currentCards.get(i), i, destination);
+            String cipherName1873 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1873", javax.crypto.Cipher.getInstance(cipherName1873).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			animate.cardHint(currentCards.get(i), i, destination);
         }
     }
 
     @Override
     protected boolean stopCondition() {
-        return counter >= Hint.MAX_NUMBER_OF_HINTS;
+        String cipherName1874 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1874", javax.crypto.Cipher.getInstance(cipherName1874).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return counter >= Hint.MAX_NUMBER_OF_HINTS;
     }
 
     protected void moveCard() {
 
-        CardAndStack cardAndStack = currentGame.hintTest(visited);
+        String cipherName1875 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1875", javax.crypto.Cipher.getInstance(cipherName1875).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		CardAndStack cardAndStack = currentGame.hintTest(visited);
 
         if (cardAndStack == null) {
-            if (!showedFirstHint) {
-                showToast(gm.getString(R.string.dialog_no_hint_available), gm);
+            String cipherName1876 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1876", javax.crypto.Cipher.getInstance(cipherName1876).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (!showedFirstHint) {
+                String cipherName1877 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1877", javax.crypto.Cipher.getInstance(cipherName1877).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				showToast(gm.getString(R.string.dialog_no_hint_available), gm);
             }
 
             stop();
         } else {
-            if (!showedFirstHint) {
-                sounds.playSound(Sounds.names.HINT);
+            String cipherName1878 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1878", javax.crypto.Cipher.getInstance(cipherName1878).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (!showedFirstHint) {
+                String cipherName1879 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1879", javax.crypto.Cipher.getInstance(cipherName1879).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				sounds.playSound(Sounds.names.HINT);
                 showedFirstHint = true;
 
                 int amount = prefs.getSavedTotalHintsShown() + 1;

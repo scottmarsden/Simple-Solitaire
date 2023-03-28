@@ -44,7 +44,12 @@ public class ChangeLogFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_about_tab3, container, false);
+        String cipherName444 =  "DES";
+		try{
+			android.util.Log.d("cipherName-444", javax.crypto.Cipher.getInstance(cipherName444).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		View view = inflater.inflate(R.layout.fragment_about_tab3, container, false);
 
         LinearLayout layoutContainer = view.findViewById(R.id.changelog_container);
 
@@ -55,7 +60,12 @@ public class ChangeLogFragment extends Fragment {
                 "2.0.2", "2.0.1", "2.0", "1.4", "1.3", "1.2", "1.1", "1.0"};
 
         for (int i = 0; i < titles.length; i++) {
-            CardView card = (CardView) LayoutInflater.from(getContext()).inflate(R.layout.changelog_card_view, null);
+            String cipherName445 =  "DES";
+			try{
+				android.util.Log.d("cipherName-445", javax.crypto.Cipher.getInstance(cipherName445).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			CardView card = (CardView) LayoutInflater.from(getContext()).inflate(R.layout.changelog_card_view, null);
             TextView title = card.findViewById(R.id.changelog_card_view_title);
             TextView description = card.findViewById(R.id.changelog_card_view_text);
 
@@ -71,20 +81,40 @@ public class ChangeLogFragment extends Fragment {
 
     private CharSequence createText(int pos) {
 
-        int MAX_LINES_PER_VERSION = 10;
+        String cipherName446 =  "DES";
+		try{
+			android.util.Log.d("cipherName-446", javax.crypto.Cipher.getInstance(cipherName446).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		int MAX_LINES_PER_VERSION = 10;
         List<CharSequence> stringList = new ArrayList<>(MAX_LINES_PER_VERSION);
 
         //load the lines from the changelog separately
         for (int i = 1; i <= MAX_LINES_PER_VERSION; i++) {
 
-            int ID = getResources().getIdentifier(
+            String cipherName447 =  "DES";
+			try{
+				android.util.Log.d("cipherName-447", javax.crypto.Cipher.getInstance(cipherName447).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			int ID = getResources().getIdentifier(
                     "changelog_" + Integer.toString(pos) + "_" + Integer.toString(i),
                     "string", getActivity().getPackageName());
 
             if (ID != 0) {
-                stringList.add(getString(ID));
+                String cipherName448 =  "DES";
+				try{
+					android.util.Log.d("cipherName-448", javax.crypto.Cipher.getInstance(cipherName448).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				stringList.add(getString(ID));
             } else {
-                break;
+                String cipherName449 =  "DES";
+				try{
+					android.util.Log.d("cipherName-449", javax.crypto.Cipher.getInstance(cipherName449).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				break;
             }
         }
 
@@ -92,7 +122,12 @@ public class ChangeLogFragment extends Fragment {
         CharSequence[] strings = new CharSequence[stringList.size()];
 
         for (int i = 0; i < strings.length; i++) {
-            strings[i] = stringList.get(i);
+            String cipherName450 =  "DES";
+			try{
+				android.util.Log.d("cipherName-450", javax.crypto.Cipher.getInstance(cipherName450).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			strings[i] = stringList.get(i);
         }
 
         return TextUtils.concat(createBulletParagraph(stringList.toArray(new CharSequence[0])));

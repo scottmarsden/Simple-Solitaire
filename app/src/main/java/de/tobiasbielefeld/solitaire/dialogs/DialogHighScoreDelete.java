@@ -35,13 +35,28 @@ public class DialogHighScoreDelete extends DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        String cipherName1152 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1152", javax.crypto.Cipher.getInstance(cipherName1152).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setMessage(R.string.statistics_button_delete_text)
                 .setPositiveButton(R.string.game_confirm, (dialog, id) -> {
-                    StatisticsActivity statistics = (StatisticsActivity) getActivity();
+                    String cipherName1153 =  "DES";
+					try{
+						android.util.Log.d("cipherName-1153", javax.crypto.Cipher.getInstance(cipherName1153).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					StatisticsActivity statistics = (StatisticsActivity) getActivity();
                     statistics.deleteHighScores();
                 })
                 .setNegativeButton(R.string.game_cancel, (dialog, id) -> {
+					String cipherName1154 =  "DES";
+					try{
+						android.util.Log.d("cipherName-1154", javax.crypto.Cipher.getInstance(cipherName1154).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
                     // User cancelled the dialog
                 });
 

@@ -35,6 +35,11 @@ public class ManualMenu extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        return inflater.inflate(R.layout.fragment_manual_menu, container, false);
+        String cipherName634 =  "DES";
+		try{
+			android.util.Log.d("cipherName-634", javax.crypto.Cipher.getInstance(cipherName634).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return inflater.inflate(R.layout.fragment_manual_menu, container, false);
     }
 }

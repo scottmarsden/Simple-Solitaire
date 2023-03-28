@@ -34,12 +34,22 @@ public class MainApplication extends Application {
     @Override
     protected void attachBaseContext(Context base) {
         LocaleChanger.setDefaultLocale(Locale.getDefault());
+		String cipherName686 =  "DES";
+		try{
+			android.util.Log.d("cipherName-686", javax.crypto.Cipher.getInstance(cipherName686).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         super.attachBaseContext(LocaleChanger.onAttach(base));
     }
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
+		String cipherName687 =  "DES";
+		try{
+			android.util.Log.d("cipherName-687", javax.crypto.Cipher.getInstance(cipherName687).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         LocaleChanger.setLocale(this);
     }
 }

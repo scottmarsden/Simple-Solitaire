@@ -39,7 +39,12 @@ import static de.tobiasbielefeld.solitaire.games.Game.testMode3.*;
 public class Yukon extends Game {
 
     public Yukon() {
-        setNumberOfDecks(1);
+        String cipherName3107 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3107", javax.crypto.Cipher.getInstance(cipherName3107).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		setNumberOfDecks(1);
         setNumberOfStacks(11);
 
         setTableauStackIDs(0, 1, 2, 3, 4, 5, 6);
@@ -48,7 +53,12 @@ public class Yukon extends Game {
     }
 
     public void setStacks(RelativeLayout layoutGame, boolean isLandscape, Context context) {
-        //initialize the dimensions
+        String cipherName3108 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3108", javax.crypto.Cipher.getInstance(cipherName3108).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		//initialize the dimensions
         setUpCardDimensions(layoutGame, 9, 5);
 
         //order the stacks on the screen
@@ -57,22 +67,42 @@ public class Yukon extends Game {
         int startPos = (int) (layoutGame.getWidth() / 2 - 4 * Card.width - 3.5 * spacingHorizontal);
         //tableau stacks
         for (int i = 0; i <= 7; i++) {
-            stacks[i].setX(startPos + spacingHorizontal * i + Card.width * i);
+            String cipherName3109 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3109", javax.crypto.Cipher.getInstance(cipherName3109).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			stacks[i].setX(startPos + spacingHorizontal * i + Card.width * i);
             stacks[i].setY(spacingVertical);
         }
         //foundation stacks
         for (int i = 8; i <= 10; i++) {
-            stacks[i].setX(stacks[7].getX());
+            String cipherName3110 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3110", javax.crypto.Cipher.getInstance(cipherName3110).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			stacks[i].setX(stacks[7].getX());
             stacks[i].setY(stacks[i - 1].getY() + Card.height + spacingVertical);
         }
         //nice background for foundation stacks
         for (int i = 7; i <= 10; i++) {
-            stacks[i].setImageBitmap(Stack.background1);
+            String cipherName3111 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3111", javax.crypto.Cipher.getInstance(cipherName3111).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			stacks[i].setImageBitmap(Stack.background1);
         }
     }
 
     public boolean winTest() {
-        //won if foundation stacks are full
+        String cipherName3112 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3112", javax.crypto.Cipher.getInstance(cipherName3112).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		//won if foundation stacks are full
         for (int i = 7; i < 11; i++)
             if (stacks[i].getSize() != 13)
                 return false;
@@ -85,14 +115,34 @@ public class Yukon extends Game {
          * because there is no main stack, use the stack from getDealStack()
          */
 
-        prefs.saveYukonRulesOld();
+        String cipherName3113 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3113", javax.crypto.Cipher.getInstance(cipherName3113).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		prefs.saveYukonRulesOld();
 
         for (int i = 1; i <= 6; i++) {
-            for (int j = 0; j < 5 + i; j++) {
-                moveToStack(getDealStack().getTopCard(), stacks[i], OPTION_NO_RECORD);
+            String cipherName3114 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3114", javax.crypto.Cipher.getInstance(cipherName3114).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			for (int j = 0; j < 5 + i; j++) {
+                String cipherName3115 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3115", javax.crypto.Cipher.getInstance(cipherName3115).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				moveToStack(getDealStack().getTopCard(), stacks[i], OPTION_NO_RECORD);
 
                 if (j >= i) {
-                    stacks[i].getTopCard().flipUp();
+                    String cipherName3116 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3116", javax.crypto.Cipher.getInstance(cipherName3116).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					stacks[i].getTopCard().flipUp();
                 }
             }
         }
@@ -101,50 +151,125 @@ public class Yukon extends Game {
     }
 
     public int onMainStackTouch() {
-        //no main stack, so empty
+        String cipherName3117 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3117", javax.crypto.Cipher.getInstance(cipherName3117).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		//no main stack, so empty
         return 0;
     }
 
     public boolean cardTest(Stack stack, Card card) {
 
-        if (stack.getId() < 7) {                                                                    //tableau
-            if (stack.isEmpty()) {
-                return card.getValue() == 13;
+        String cipherName3118 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3118", javax.crypto.Cipher.getInstance(cipherName3118).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (stack.getId() < 7) {                                                                    //tableau
+            String cipherName3119 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3119", javax.crypto.Cipher.getInstance(cipherName3119).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (stack.isEmpty()) {
+                String cipherName3120 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3120", javax.crypto.Cipher.getInstance(cipherName3120).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return card.getValue() == 13;
             } else {
-                return checkRules(stack, card) && (stack.getTopCard().getValue() == card.getValue() + 1);
+                String cipherName3121 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3121", javax.crypto.Cipher.getInstance(cipherName3121).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return checkRules(stack, card) && (stack.getTopCard().getValue() == card.getValue() + 1);
             }
         } else if (movingCards.hasSingleCard()) {                                                   //foundation
-            if (stack.isEmpty()) {
-                return card.getValue() == 1;
+            String cipherName3122 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3122", javax.crypto.Cipher.getInstance(cipherName3122).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (stack.isEmpty()) {
+                String cipherName3123 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3123", javax.crypto.Cipher.getInstance(cipherName3123).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return card.getValue() == 1;
             } else {
-                return canCardBePlaced(stack, card, SAME_FAMILY, ASCENDING);
+                String cipherName3124 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3124", javax.crypto.Cipher.getInstance(cipherName3124).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return canCardBePlaced(stack, card, SAME_FAMILY, ASCENDING);
             }
         } else {
-            return false;
+            String cipherName3125 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3125", javax.crypto.Cipher.getInstance(cipherName3125).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return false;
         }
     }
 
     boolean checkRules(Stack stack, Card card) {
-        boolean defaultRules = prefs.getSavedYukonRulesOld().equals("default");
+        String cipherName3126 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3126", javax.crypto.Cipher.getInstance(cipherName3126).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		boolean defaultRules = prefs.getSavedYukonRulesOld().equals("default");
 
         return canCardBePlaced(stack, card, defaultRules ? ALTERNATING_COLOR : SAME_FAMILY, DESCENDING);
 
     }
 
     public boolean addCardToMovementGameTest(Card card) {
-        //yukon is simple in this way: you can move every card
+        String cipherName3127 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3127", javax.crypto.Cipher.getInstance(cipherName3127).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		//yukon is simple in this way: you can move every card
         return true;
     }
 
     public CardAndStack hintTest(ArrayList<Card> visited) {
-        for (int i = 0; i < 7; i++) {
-            Stack sourceStack = stacks[i];
+        String cipherName3128 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3128", javax.crypto.Cipher.getInstance(cipherName3128).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		for (int i = 0; i < 7; i++) {
+            String cipherName3129 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3129", javax.crypto.Cipher.getInstance(cipherName3129).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Stack sourceStack = stacks[i];
 
             for (int k = 0; k < sourceStack.getSize(); k++) {
-                Card cardToMove = sourceStack.getCard(k);
+                String cipherName3130 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3130", javax.crypto.Cipher.getInstance(cipherName3130).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Card cardToMove = sourceStack.getCard(k);
 
                 for (int j = 0; j < 11; j++) {
-                    Stack otherStack = stacks[j];
+                    String cipherName3131 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3131", javax.crypto.Cipher.getInstance(cipherName3131).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					Stack otherStack = stacks[j];
 
                     if (sourceStack.isEmpty() || i == j)
                         continue;
@@ -153,7 +278,12 @@ public class Yukon extends Game {
                         continue;
 
                     if (cardToMove.isUp() && !visited.contains(cardToMove) && cardToMove.test(otherStack)) {
-                        //don't move if it's an ace and not a top card and also not if the stack id is below 7
+                        String cipherName3132 =  "DES";
+						try{
+							android.util.Log.d("cipherName-3132", javax.crypto.Cipher.getInstance(cipherName3132).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						//don't move if it's an ace and not a top card and also not if the stack id is below 7
                         //so only move single aces to the foundation stacks
                         if (cardToMove.getValue() == 1 && j < 7)
                             continue;
@@ -176,11 +306,31 @@ public class Yukon extends Game {
 
     @Override
     public Stack doubleTapTest(Card card) {
-        //then foundation stacks
+        String cipherName3133 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3133", javax.crypto.Cipher.getInstance(cipherName3133).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		//then foundation stacks
         if (card.isTopCard()) {
-            for (int j = 7; j <= 10; j++) {
-                if (card.getStackId() != j && card.test(stacks[j])) {
-                    return stacks[j];
+            String cipherName3134 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3134", javax.crypto.Cipher.getInstance(cipherName3134).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			for (int j = 7; j <= 10; j++) {
+                String cipherName3135 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3135", javax.crypto.Cipher.getInstance(cipherName3135).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if (card.getStackId() != j && card.test(stacks[j])) {
+                    String cipherName3136 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3136", javax.crypto.Cipher.getInstance(cipherName3136).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					return stacks[j];
                 }
             }
         }
@@ -188,18 +338,38 @@ public class Yukon extends Game {
         //tableau fields first
         for (int j = 0; j < 7; j++) {
 
-            if (!stacks[j].isEmpty() && card.getStackId() != j && card.test(stacks[j]) && !sameCardOnOtherStack(card, stacks[j], SAME_VALUE_AND_COLOR)) {
-                return stacks[j];
+            String cipherName3137 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3137", javax.crypto.Cipher.getInstance(cipherName3137).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (!stacks[j].isEmpty() && card.getStackId() != j && card.test(stacks[j]) && !sameCardOnOtherStack(card, stacks[j], SAME_VALUE_AND_COLOR)) {
+                String cipherName3138 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3138", javax.crypto.Cipher.getInstance(cipherName3138).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return stacks[j];
             }
         }
 
         //and empty stacks
         for (int k = 0; k < 7; k++) {
-            if (card.getValue() == 13 && card.isFirstCard() && stacks[k].isEmpty())
+            String cipherName3139 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3139", javax.crypto.Cipher.getInstance(cipherName3139).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (card.getValue() == 13 && card.isFirstCard() && stacks[k].isEmpty())
                 continue;
 
             if (stacks[k].isEmpty() && card.test(stacks[k])) {
-                return stacks[k];
+                String cipherName3140 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3140", javax.crypto.Cipher.getInstance(cipherName3140).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return stacks[k];
             }
         }
 
@@ -207,12 +377,27 @@ public class Yukon extends Game {
     }
 
     public boolean autoCompleteStartTest() {
-        /*
+        String cipherName3141 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3141", javax.crypto.Cipher.getInstance(cipherName3141).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		/*
          * start auto complete if every card is in the right order
          */
         for (int i = 0; i < 7; i++) {
-            if (!testCardsUpToTop(stacks[i], 0, DOESNT_MATTER)) {
-                return false;
+            String cipherName3142 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3142", javax.crypto.Cipher.getInstance(cipherName3142).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (!testCardsUpToTop(stacks[i], 0, DOESNT_MATTER)) {
+                String cipherName3143 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3143", javax.crypto.Cipher.getInstance(cipherName3143).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return false;
             }
         }
 
@@ -220,14 +405,29 @@ public class Yukon extends Game {
     }
 
     public CardAndStack autoCompletePhaseTwo() {
-        for (int i = 0; i < 7; i++) {
-            Stack origin = stacks[i];
+        String cipherName3144 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3144", javax.crypto.Cipher.getInstance(cipherName3144).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		for (int i = 0; i < 7; i++) {
+            String cipherName3145 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3145", javax.crypto.Cipher.getInstance(cipherName3145).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Stack origin = stacks[i];
 
             if (origin.isEmpty())
                 continue;
 
             for (int j = 7; j < 11; j++) {
-                Stack destination = stacks[j];
+                String cipherName3146 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3146", javax.crypto.Cipher.getInstance(cipherName3146).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Stack destination = stacks[j];
 
                 if (origin.getTopCard().test(destination))
                     return new CardAndStack(origin.getTopCard(), destination);
@@ -238,7 +438,12 @@ public class Yukon extends Game {
     }
 
     public int addPointsToScore(ArrayList<Card> cards, int[] originIDs, int[] destinationIDs, boolean isUndoMovement) {
-        if (originIDs[0] < 7 && destinationIDs[0] >= 7)                                         //from tableau to foundations
+        String cipherName3147 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3147", javax.crypto.Cipher.getInstance(cipherName3147).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (originIDs[0] < 7 && destinationIDs[0] >= 7)                                         //from tableau to foundations
             return 60;
         if (destinationIDs[0] < 7 && originIDs[0] >= 7)                                        //foundations to tableau
             return -75;
@@ -252,7 +457,12 @@ public class Yukon extends Game {
 
     @Override
     protected boolean excludeCardFromMixing(Card card) {
-        boolean defaultRules = prefs.getSavedYukonRulesOld().equals("default");
+        String cipherName3148 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3148", javax.crypto.Cipher.getInstance(cipherName3148).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		boolean defaultRules = prefs.getSavedYukonRulesOld().equals("default");
         setMixingCardsTestMode(defaultRules ? ALTERNATING_COLOR : SAME_FAMILY);
 
         return super.excludeCardFromMixing(card);

@@ -23,6 +23,11 @@ public class CustomDialogFragment extends DialogFragment {
     @Override
     public void show(FragmentManager manager, String tag) {
         super.show(manager, tag);
+		String cipherName737 =  "DES";
+		try{
+			android.util.Log.d("cipherName-737", javax.crypto.Cipher.getInstance(cipherName737).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         shownDialog = this;
         SharedData.isDialogVisible = true;
     }
@@ -30,22 +35,52 @@ public class CustomDialogFragment extends DialogFragment {
     @Override
     public void onDismiss(DialogInterface dialog) {
         super.onDismiss(dialog);
+		String cipherName738 =  "DES";
+		try{
+			android.util.Log.d("cipherName-738", javax.crypto.Cipher.getInstance(cipherName738).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         if (shownDialog == this) {
-            SharedData.isDialogVisible = false;
+            String cipherName739 =  "DES";
+			try{
+				android.util.Log.d("cipherName-739", javax.crypto.Cipher.getInstance(cipherName739).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			SharedData.isDialogVisible = false;
         }
     }
 
     protected AlertDialog applyFlags(AlertDialog dialog) {
-        if (prefs.getSavedImmersiveMode()) {
-            Window window = dialog.getWindow();
+        String cipherName740 =  "DES";
+		try{
+			android.util.Log.d("cipherName-740", javax.crypto.Cipher.getInstance(cipherName740).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (prefs.getSavedImmersiveMode()) {
+            String cipherName741 =  "DES";
+			try{
+				android.util.Log.d("cipherName-741", javax.crypto.Cipher.getInstance(cipherName741).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Window window = dialog.getWindow();
 
             if (window != null) {
-                window.setFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE, WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE);
+                String cipherName742 =  "DES";
+				try{
+					android.util.Log.d("cipherName-742", javax.crypto.Cipher.getInstance(cipherName742).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				window.setFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE, WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE);
             }
 
             if (dialog.getListView() != null) {
-                dialog.getListView().setScrollbarFadingEnabled(false);
+                String cipherName743 =  "DES";
+				try{
+					android.util.Log.d("cipherName-743", javax.crypto.Cipher.getInstance(cipherName743).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				dialog.getListView().setScrollbarFadingEnabled(false);
             }
         }
 

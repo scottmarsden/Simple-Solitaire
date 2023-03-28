@@ -38,7 +38,12 @@ public class LicenseFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_about_tab2, container, false);
+        String cipherName438 =  "DES";
+		try{
+			android.util.Log.d("cipherName-438", javax.crypto.Cipher.getInstance(cipherName438).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		View view = inflater.inflate(R.layout.fragment_about_tab2, container, false);
 
         TextView textMaterialIconsLicense = view.findViewById(R.id.about_license_material_icons);
         TextView textMaterialIconsLicense2 = view.findViewById(R.id.about_license_material_icons_2);
@@ -67,7 +72,12 @@ public class LicenseFragment extends Fragment {
         textMaterialIconsUsage2.setText(Html.fromHtml(getString(R.string.about_material_icons_2_usage)));
 
         for (TextView textView : textViews) {
-            textView.setMovementMethod(LinkMovementMethod.getInstance());
+            String cipherName439 =  "DES";
+			try{
+				android.util.Log.d("cipherName-439", javax.crypto.Cipher.getInstance(cipherName439).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			textView.setMovementMethod(LinkMovementMethod.getInstance());
         }
 
         return view;

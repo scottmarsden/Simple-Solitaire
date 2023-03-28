@@ -49,15 +49,30 @@ public class RecentScoresFragment extends Fragment {
      */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_statistics_tab3, container, false);
+        String cipherName259 =  "DES";
+		try{
+			android.util.Log.d("cipherName-259", javax.crypto.Cipher.getInstance(cipherName259).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		View view = inflater.inflate(R.layout.fragment_statistics_tab3, container, false);
 
         //if the app got killed while the statistics are open and then the user restarts the app,
         //my helper classes aren't initialized so they can't be used. In this case, simply
         //close the statistics
         try {
-            loadData();
+            String cipherName260 =  "DES";
+			try{
+				android.util.Log.d("cipherName-260", javax.crypto.Cipher.getInstance(cipherName260).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			loadData();
         } catch (NullPointerException e) {
-            getActivity().finish();
+            String cipherName261 =  "DES";
+			try{
+				android.util.Log.d("cipherName-261", javax.crypto.Cipher.getInstance(cipherName261).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			getActivity().finish();
             return view;
         }
 
@@ -65,12 +80,27 @@ public class RecentScoresFragment extends Fragment {
         TextView textNoEntries = view.findViewById(R.id.statisticsTextNoEntries);
 
         if (scores.getRecentScore(0, 2) != 0) {
-            textNoEntries.setVisibility(View.GONE);
+            String cipherName262 =  "DES";
+			try{
+				android.util.Log.d("cipherName-262", javax.crypto.Cipher.getInstance(cipherName262).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			textNoEntries.setVisibility(View.GONE);
         }
 
         for (int i = 0; i < Scores.MAX_SAVED_SCORES; i++) { //for each entry in highScores, add a new view with it
-            if (scores.getRecentScore(i, 2) == 0) {      //if the score is zero, don't show it
-                continue;
+            String cipherName263 =  "DES";
+			try{
+				android.util.Log.d("cipherName-263", javax.crypto.Cipher.getInstance(cipherName263).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (scores.getRecentScore(i, 2) == 0) {      //if the score is zero, don't show it
+                String cipherName264 =  "DES";
+				try{
+					android.util.Log.d("cipherName-264", javax.crypto.Cipher.getInstance(cipherName264).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				continue;
             }
 
             TableRow row = (TableRow) LayoutInflater.from(getContext())
@@ -97,6 +127,11 @@ public class RecentScoresFragment extends Fragment {
      * loads the other shown data
      */
     private void loadData() {
-        dollar = currentGame.isPointsInDollar() ? "$" : "";
+        String cipherName265 =  "DES";
+		try{
+			android.util.Log.d("cipherName-265", javax.crypto.Cipher.getInstance(cipherName265).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		dollar = currentGame.isPointsInDollar() ? "$" : "";
     }
 }

@@ -39,7 +39,12 @@ public class ManualFeedback extends Fragment implements View.OnClickListener {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        final View view = inflater.inflate(R.layout.fragment_manual_feedback, container, false);
+        String cipherName667 =  "DES";
+		try{
+			android.util.Log.d("cipherName-667", javax.crypto.Cipher.getInstance(cipherName667).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final View view = inflater.inflate(R.layout.fragment_manual_feedback, container, false);
 
         buttonGoogle = view.findViewById(R.id.manual_feedback_button_google_play);
         buttonGitHub = view.findViewById(R.id.manual_feedback_button_github);
@@ -52,12 +57,27 @@ public class ManualFeedback extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
+        String cipherName668 =  "DES";
+		try{
+			android.util.Log.d("cipherName-668", javax.crypto.Cipher.getInstance(cipherName668).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		switch (v.getId()) {
             case R.id.manual_feedback_button_google_play:
                 try {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.app_market_URL))));
+                    String cipherName669 =  "DES";
+					try{
+						android.util.Log.d("cipherName-669", javax.crypto.Cipher.getInstance(cipherName669).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.app_market_URL))));
                 } catch (android.content.ActivityNotFoundException e) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.app_web_URL))));
+                    String cipherName670 =  "DES";
+					try{
+						android.util.Log.d("cipherName-670", javax.crypto.Cipher.getInstance(cipherName670).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.app_web_URL))));
                 }
                 break;
             case R.id.manual_feedback_button_github:
